@@ -10,3 +10,4 @@ kadira:blaze-layout
 twbs:bootstrap
 accounts-password
 accounts-ui
+audit-argument-checks

@@ -5,16 +5,13 @@ Template.notesAdd.events({
         var title = tmpl.$('[name="title"]').val();
         var content = tmpl.$('[name="content"]').val();
 
-        Notes.insert({
-            title: title,
-            content: content
-        }, function (err) {
+        Meteor.call('addNewNote', title, content, function (err) {
             if (err) {
                 console.error(err);
             } else {
                 FlowRouter.go('/notes');
             }
-        })
+        });
     }
 });
 
