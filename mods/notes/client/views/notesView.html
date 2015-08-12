@@ -1,4 +1,13 @@
 <template name="notesView">
-    <h1>Title</h1>
-    <p>content</p>
+    {{#with note}}
+        <h1>{{title}}</h1>
+
+        <p>{{content}}</p>
+
+        <p>
+            <button class="js-delete-note btn btn-danger">Delete note</button>
+        </p>
+    {{else}}
+        <h1>404</h1>
+    {{/with}}
 </template>

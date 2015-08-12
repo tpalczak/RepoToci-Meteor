@@ -6,10 +6,14 @@
         </small>
     </h2>
     <ul class="list-group">
-        {{#each notes}}
-            <a href="/notes/{{_id}}" class="list-group-item">{{title}}</a>
+        {{#if Template.subscriptionsReady}}
+            {{#each notes}}
+                <a href="/notes/{{_id}}" class="list-group-item">{{title}}</a>
+            {{else}}
+                <li class="list-group-item">No notes yet!</li>
+            {{/each}}
         {{else}}
-            <li class="list-group-item">No notes yet!</li>
-        {{/each}}
+            <li class="list-group-item">Loading</li>
+        {{/if}}
     </ul>
 </template>

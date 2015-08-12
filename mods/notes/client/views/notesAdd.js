@@ -9,7 +9,9 @@ Template.notesAdd.events({
             title: title,
             content: content
         }, function (err) {
-            if (!err) {
+            if (err) {
+                console.error(err);
+            } else {
                 FlowRouter.go('/notes');
             }
         })
