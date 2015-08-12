@@ -1,0 +1,15 @@
+<template name="notesListing">
+    <h2>
+        Notes
+        <small>
+            <a href="/notes/add" class="btn btn-xs btn-primary">Add new note</a>
+        </small>
+    </h2>
+    <ul class="list-group">
+        {{#each notes}}
+            <a href="/notes/{{_id}}" class="list-group-item">{{title}}</a>
+        {{else}}
+            <li class="list-group-item">No notes yet!</li>
+        {{/each}}
+    </ul>
+</template>
