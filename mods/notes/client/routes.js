@@ -22,6 +22,13 @@ FlowRouter.route('/notes/:id', {
     }
 });
 
+FlowRouter.route('/notes/update/:id', {
+    action: function () {
+        BlazeLayout.render('layout', {
+            main: 'notesUpdate'
+        });
+    }
+});
 
 
 
