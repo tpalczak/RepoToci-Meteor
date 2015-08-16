@@ -18,3 +18,4 @@ Notes.deny({
         return !userId;
     }
 });
+

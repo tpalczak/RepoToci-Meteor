@@ -1,4 +1,9 @@
 <template name="notesView">
+    <!--<div class="form-group">-->
+        <!--<label>Password</label>-->
+        <!--<input class="form-control" name="pass" placeholder="Password"/>-->
+        <!--<button class="js-view-note btn btn-default">Check password</button>-->
+    <!--</div>-->
     {{#with note}}
         <h1>{{title}}</h1>
 
@@ -7,7 +12,10 @@
         <p>
             <button class="js-delete-note btn btn-danger">Delete note</button>
         </p>
+        <p>
+            <a href="/notes/update/{{_id}}" class="update-link">update note</a>
+        </p>
     {{else}}
-        <h1>404</h1>
+        <h1>Not authorized</h1>
     {{/with}}
 </template>

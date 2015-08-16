@@ -1,5 +1,6 @@
 Meteor.publish('notesListing', function () {
-    return Notes.find({}, {
+    Notes.find()
+    return Notes.find({authorId:this.userId}, {
         fields: {
             title: 1
         }
@@ -7,5 +8,13 @@ Meteor.publish('notesListing', function () {
 });
 Meteor.publish('notesView', function (id) {
     check(id, String);
-    return Notes.find({_id: id});
+    //check(pass, String);
+    //if (Notes.find({_id: id}).fetch()[0].pass === pass)
+    return Notes.find({_id: id})
+});
+Meteor.publish('notesUpdate', function (id) {
+    check(id, String);
+    //check(pass, String);
+    //if (Notes.find({_id: id}).fetch()[0].pass === pass)
+    return Notes.find({_id: id})
 });
